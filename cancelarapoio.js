@@ -11,18 +11,11 @@
 
     function init() {
         console.log('[Kimmis] init() called');
-        console.log('[Kimmis] All h3s:');
-        document.querySelectorAll('h3').forEach((h, i) => {
-            console.log(i, `"${h.textContent}"`, h.textContent.charCodeAt(0), h.textContent.length);
-        });
+
+        console.log(document.querySelectorAll('h3'));
         // h3 "Defesas"
         const h3Defesas = Array.from(document.querySelectorAll('h3'))
-            .find(h => h.textContent
-                .normalize('NFKD')      // normalize accents
-                .replace(/\s+/g, ' ')   // replace all whitespace sequences with a normal space
-                .trim()
-                .toLowerCase()
-                .startsWith('defesa'));
+            .find(h => h.textContent.trim().toLowerCase().startsWith('defesa'));
 
         if (!h3Defesas) {
             console.log('[Kimmis] h3 "Defesas" não encontrado.');
