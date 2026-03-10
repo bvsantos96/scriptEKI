@@ -15,7 +15,7 @@
         console.log(document.querySelectorAll('h3'));
         // h3 "Defesas"
         const h3Defesas = Array.from(document.querySelectorAll('h3'))
-            .find(h => h.textContent.trim().toLowerCase().startsWith('defesa'));
+          .find(h => h.textContent.toLowerCase().includes('defesa'));
 
         if (!h3Defesas) {
             console.log('[Kimmis] h3 "Defesas" não encontrado.');
