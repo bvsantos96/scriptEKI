@@ -3,7 +3,11 @@
 
     console.log('[Kimmis] Script loaded');
 
-    window.addEventListener('load', init);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 
     function init() {
         console.log('[Kimmis] init() called');
